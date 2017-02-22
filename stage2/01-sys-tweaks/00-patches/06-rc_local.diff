@@ -1,8 +1,6 @@
-Index: jessie-stage2/rootfs/etc/rc.local
-===================================================================
 --- jessie-stage2.orig/rootfs/etc/rc.local
 +++ jessie-stage2/rootfs/etc/rc.local
-@@ -11,4 +11,10 @@
+@@ -11,4 +11,13 @@
  #
  # By default this script does nothing.
  
@@ -11,5 +9,8 @@ Index: jessie-stage2/rootfs/etc/rc.local
 +if [ "$_IP" ]; then
 +  printf "My IP address is %s\n" "$_IP"
 +fi
++
++# Disable HDMI display for power saving
++tvservice -o
 +
  exit 0
